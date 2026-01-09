@@ -10,6 +10,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import { Provider } from "@radix-ui/react-tooltip";
+import { Toaster } from "@/components/ui/sonner";
 // import { Provider } from "@/app/provider";
 const AppFont =DM_Sans({subsets: ['latin']})
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
       className={AppFont.className}>
         <Provider>
+          <Toaster position="top-center" richColors/>
         {children}
         </Provider>
       </body>
