@@ -19,6 +19,7 @@ import { QUICK_VIDEO_SUGGESTIONS } from '@/data/constant'
 import axios from 'axios'
 import { toast } from 'sonner'
 import { SignInButton, useUser } from '@clerk/nextjs'
+import { useRouter } from 'next/router'
 
 const Hero = () => {
 
@@ -26,6 +27,7 @@ const Hero = () => {
   const [type,SetType]=useState('full-course');
   const[loading,setLoading]=useState(false);
   const{user}=useUser();
+  const router=useRouter();
 
   const GenerateCourseLayout= async()=>{
   const toastId=toast.loading('Generating Course Layout...');
@@ -43,6 +45,7 @@ const Hero = () => {
     toast.success('Course Layout Generated Successfully!',
       {id:toastId});
       // navigate to course editor page
+      router.push('/course/'+courseId);
     }catch(err){
       setLoading(false);
       toast.error('Failed to Generate Course Layout. Please try again.',{id:toastId});

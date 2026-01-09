@@ -9,8 +9,9 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
-import { Provider } from "@radix-ui/react-tooltip";
+// import { Provider } from "@radix-ui/react-tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import Provider from "./provider";
 // import { Provider } from "@/app/provider";
 const AppFont =DM_Sans({subsets: ['latin']})
 
